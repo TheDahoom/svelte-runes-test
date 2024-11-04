@@ -1,7 +1,9 @@
 <script>
 	import Header from './Header.svelte';
 	import '../app.css';
-  import Seo from 'sk-seo';
+	import Seo from 'sk-seo';
+	
+	let { children } = $props();
 </script>
 
 <Seo title="SvelteKit App" description="A SvelteKit app template" />
@@ -9,7 +11,7 @@
 	<Header />
 
 	<main>
-		<slot />
+		{@render children?.()}
 	</main>
 
 	<footer>
